@@ -1,5 +1,1 @@
-[
-  { "file": "1-checklist.jpg", "path": "/", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "2-silver.jpg", "path": "/", "grade": "silver", "viewport": { "width": 1280, "height": 800 } },
-  { "file": "3-bronze.jpg", "path": "/", "grade": "bronze", "scroll": 1400, "viewport": { "width": 1280, "height": 800 } }
-]
+[{"file":"1-checklist.jpg","note":"Main checklist: hero with progress ring (6 trophies ticked), grade counts, filter bar, trophy cards","path":"/","viewport":{"height":800,"width":1280}},{"file":"2-roadmap.jpg","note":"Roadmap to Platinum view: the four stages in order, starting with Story Playthrough","path":"/#view=roadmap","viewport":{"height":800,"width":1280}},{"file":"3-detail.jpg","note":"A trophy guide expanded: the one missable trophy, Positive Mental Attitude, found via search","path":"/#search=Positive%20Mental%20Attitude&expand=28","viewport":{"height":800,"width":1280}},{"file":"4-filter.jpg","note":"Filtered view: story trophies only, with Hide story spoilers on — names and descriptions hidden","path":"/#kind=story&spoiler=on","viewport":{"height":800,"width":1280}}]

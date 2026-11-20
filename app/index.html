@@ -3,23 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTA VI trophy checklist</title>
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="The complete unofficial guide to all 55 Grand Theft Auto VI trophies on PlayStation 5: an original guide for every trophy, a four-stage roadmap to the Platinum, and a tracker that saves your progress.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <h1>GTA VI trophy checklist</h1>
-  <p id="progress">0 of 55 earned</p>
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="grid-floor" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies &middot; Unofficial fan guide</p>
+    <h1>Leonida <span>Legend</span></h1>
+    <p class="tagline">Every trophy, an original guide for each one, and a four-stage road to the Platinum. Tick trophies off as you earn them — your progress is saved on this device.</p>
+    <div class="hero-progress">
+      <div class="ring-wrap" role="img" aria-label="Overall trophy progress">
+        <svg class="ring" viewBox="0 0 120 120" width="120" height="120">
+          <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <div class="ring-text"><strong id="ringPct">0%</strong><span id="ringCount">0 / 55</span></div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-line" id="gradeCounts"></div>
+        <div class="plat-line"><span class="plat-dot" aria-hidden="true"></span><span id="platProgress">0 of 54 trophies toward the Platinum</span></div>
+        <div class="hero-actions">
+          <button id="exportBtn" type="button">Export progress</button>
+          <label class="import-btn">Import progress<input id="importFile" type="file" accept="application/json,.json"></label>
+          <button id="resetBtn" type="button" class="quiet">Reset</button>
+        </div>
+        <p class="hero-note" id="saveNote">Progress saves automatically in this browser.</p>
+      </div>
+    </div>
+  </div>
 </header>
-<div class="controls">
-  <label>Grade <select id="grade"><option value="all">All</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-  <button id="export" type="button">Export progress</button>
-  <label class="import">Import progress <input id="import" type="file" accept="application/json"></label>
+
+<div class="sticky-bar">
+  <nav class="tabs" aria-label="Views">
+    <button id="tabChecklist" type="button" class="tab active" data-view="checklist">Checklist</button>
+    <button id="tabRoadmap" type="button" class="tab" data-view="roadmap">Roadmap to Platinum</button>
+    <span class="tab-count" id="showingCount"></span>
+  </nav>
+  <div class="filters" id="filterBar">
+    <div class="filter-row">
+      <input id="searchBox" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+      <label class="select-label">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="select-label">Status
+        <select id="earnedFilter">
+          <option value="all">Earned &amp; unearned</option>
+          <option value="earned">Earned only</option>
+          <option value="unearned">Unearned only</option>
+        </select>
+      </label>
+      <label class="spoiler-toggle" title="Hide the names and descriptions of story trophies until you earn them">
+        <input id="spoilerToggle" type="checkbox"> Hide story spoilers
+      </label>
+    </div>
+    <div class="filter-row chips" id="kindChips" role="group" aria-label="Filter by kind">
+      <button type="button" class="chip active" data-kind="all">All</button>
+      <button type="button" class="chip" data-kind="story">Story</button>
+      <button type="button" class="chip" data-kind="missable">Missable</button>
+      <button type="button" class="chip" data-kind="collectible">Collectibles</button>
+      <button type="button" class="chip" data-kind="activity">Activities</button>
+      <button type="button" class="chip" data-kind="combat">Combat</button>
+      <button type="button" class="chip" data-kind="exploration">Exploration</button>
+      <button type="button" class="chip" data-kind="misc">Misc</button>
+    </div>
+  </div>
 </div>
-<table>
-  <thead><tr><th>Earned</th><th>Trophy</th><th>Grade</th><th>How to get it</th></tr></thead>
-  <tbody id="rows"></tbody>
-</table>
+
+<main>
+  <section id="view-checklist" aria-label="Trophy checklist">
+    <p class="missable-banner" id="missableBanner" hidden></p>
+    <div class="card-grid" id="cardGrid"></div>
+    <p class="empty-note" id="emptyNote" hidden>No trophies match these filters. Try clearing the search or choosing another kind.</p>
+  </section>
+
+  <section id="view-roadmap" aria-label="Roadmap to the Platinum" hidden>
+    <p class="roadmap-intro">Four stages, in order, from your first mission to the Platinum. The whole list is single-player and can be done in one playthrough — guides put the total at around 200 hours. Keep a manual save at the start of every chapter, and never use cheats on your trophy save.</p>
+    <div id="roadmapStages"></div>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Leonida Legend</strong> is an unofficial fan-made guide. It is not affiliated with, endorsed by, or connected to Rockstar Games or Take-Two Interactive. No official artwork, logos, or game images are used; the design is original.</p>
+  <p>Trophy names, descriptions, and grades are the official list as verified 2026-11-20. Guides are original text written for this page; each trophy cites its sources. A few trophies have no confirmed unlock method yet — those guides say so honestly instead of guessing.</p>
+  <p>Progress is stored only in this browser (localStorage). Export it to keep a backup, or to move it to another device.</p>
+</footer>
+
 <script type="module" src="app.js"></script>
 </body>
 </html>
