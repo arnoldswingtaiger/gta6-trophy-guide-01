@@ -35,3 +35,5 @@ That copies `app/` and `screenshots/` into `out/` and writes `out/dossier.json` 
 ## Data
 
 `app/data/trophies.json` holds the official 55-trophy list as verified 2026-11-20, with the original guides, roadmap stages, and source citations. Trophy names, descriptions, and grades are Rockstar's; the guides and design are original work.
+
+<!-- Resubmit note (2026-11-21): no functional change. This commit exists only to refresh the entry snapshot for re-grading after the dev grade failed twice with no error. -->
